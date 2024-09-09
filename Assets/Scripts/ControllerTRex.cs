@@ -9,14 +9,14 @@ public class ControllerTRex : MonoBehaviour
     private float rotation;
 
     
-    public void OnDeplacement(InputValue valeur) //Si on veut changer la valeur de la variable d'input, on change (OnDeplacement ou OnMove)
+    public void Deplacer(InputAction.CallbackContext contexte) //Si on veut changer la valeur de la variable d'input, on change (OnDeplacement ou OnMove)
     {
-        deplacement = valeur.Get<Vector2>();
+        deplacement = contexte.action.ReadValue<Vector2>();
     }
 
-    public void OnRotation(InputValue valeur)
+    public void Rotationner(InputAction.CallbackContext contexte)
     {
-        rotation = valeur.Get<float>();
+        rotation = contexte.action.ReadValue<float>();
     }
 
     //On va pouvoir mettre le code de déplacement du TRex
